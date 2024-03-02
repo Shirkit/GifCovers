@@ -123,8 +123,6 @@ namespace MediaBrowser.Providers.MediaInfo
 
         private async Task<string> ProduceAnimatedImage(string inputPath, string container, MediaStream videoStream, double totalMilliseconds, CancellationToken cancellationToken)
         {
-            ArgumentException.ThrowIfNullOrEmpty(inputPath);
-
             var tempExtractPath = Path.Combine(Plugin.Instance.AppPaths.TempDirectory, Guid.NewGuid().ToString(), "output.webp");
             var dir = Path.GetDirectoryName(tempExtractPath);
             if (dir is null)
